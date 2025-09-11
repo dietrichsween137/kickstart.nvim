@@ -272,8 +272,6 @@ require('lazy').setup({
   --
   -- See `:help gitsigns` to understand what the configuration keys do
 
-  -- gruvbox theme
-  { 'ellisonleao/gruvbox.nvim', priority = 1000, config = true, opts = ... },
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
@@ -1014,9 +1012,6 @@ require('lazy').setup({
     },
   },
 })
-
-vim.o.background = 'dark' -- or "light" for light mode
-vim.cmd [[colorscheme gruvbox]]
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
