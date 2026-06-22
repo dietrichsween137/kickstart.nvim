@@ -175,6 +175,7 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<C-s>', vim.diagnostic.open_float, { desc = 'Expand diagnostic message' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -285,6 +286,16 @@ require('lazy').setup({
         changedelete = { text = '~' },
       },
     },
+  },
+
+  {
+  "lervag/vimtex",
+  lazy = false,     -- we don't want to lazy load VimTeX
+  -- tag = "v2.15", -- uncomment to pin to a specific release
+  init = function()
+    -- VimTeX configuration goes here, e.g.
+    vim.g.vimtex_view_method = "zathura"
+  end
   },
 
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
